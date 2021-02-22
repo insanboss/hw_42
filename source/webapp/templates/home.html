@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" method="post">
+
+    {% csrf_token %}
+    <div>
+    <label>
+        First number: <input type="number" name="first_number" required>
+    </label>
+    </div>
+    <div>
+    <label>
+        Seconde number: <input type="number" name="second_number" required>
+    </label>
+    </div>
+    <div>
+    <input type="radio" name="action" value="+" checked>
+    <label for="">Add</label><br>
+    </div>
+    <div>
+    <input type="radio" name="action" value="-">
+    <label for="female">Subtract</label><br>
+    </div>
+    <div>
+    <input type="radio" name="action" value="*">
+    <label for="other">Multiply</label>
+    </div>
+    <div>
+    <input type="radio" name="action" value="/">
+    <label for="other">Divide</label>
+    </div>
+
+    <div>
+    <input type="submit" value="Calculate"/>
+    </div>
+</form>
+<h3>Result: {{ result }}</h3>
+
+</body>
+</html>
